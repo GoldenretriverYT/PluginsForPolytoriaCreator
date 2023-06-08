@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Plugins_for_Polytoria_Creator</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="xcopy &quot;$(ProjectDir)..\PolytoriaCreatorProxy\bin\Debug\net6.0\PolytoriaCreatorProxy.exe&quot; &quot;$(ProjectDir)$(OutDir)PolytoriaCreatorProxy.exe*&quot; /Y&#xD;&#xA;xcopy &quot;$(ProjectDir)..\PolytoriaCreatorProxy\bin\Debug\net6.0\PolytoriaCreatorProxy.dll&quot; &quot;$(ProjectDir)$(OutDir)PolytoriaCreatorProxy.dll*&quot; /Y&#xD;&#xA;xcopy &quot;$(ProjectDir)..\PolytoriaCreatorProxy\bin\Debug\net6.0\PolytoriaCreatorProxy.runtimeconfig.json&quot; &quot;$(ProjectDir)$(OutDir)PolytoriaCreatorProxy.runtimeconfig.json*&quot; /Y" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>
