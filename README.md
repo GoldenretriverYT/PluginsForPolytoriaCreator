@@ -28,7 +28,7 @@ with Polytoria requires additional work than the normal installation I have deci
 ```
 
 ### Creator Versions
-As you have noticed, the creator version contains dots, but I expect you to provide a number? Well, its easy. Remove the dots and take the number without the dots. Thats your numeric version. I am not sure if this idea has flaws so if it has
+As you have noticed, the creator version contains dots, but I expect you to provide a number? Well, its easy. Replace the dots with '0' and take the number without the dots. Thats your numeric version. I am not sure if this idea has flaws so if it has
 please tell me and I will try to make a better numeric version "calculator"
 
 ## Future Plans
