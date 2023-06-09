@@ -68,7 +68,7 @@ namespace Plugins_for_Polytoria_Creator {
         }
 
         private void StartForm_Load(object sender, EventArgs e) {
-            LabelPolytoriaCreator.Text = $"Polytoria Creator Version: {Program.CreatorVersion}; Loader Installed: {Program.LoaderInstalled}";
+            LabelPolytoriaCreator.Text = $"Polytoria Creator Version: {Program.CreatorVersionNumeric} ({Program.CreatorVersion}); Loader Installed: {Program.LoaderInstalled}";
 
             UpdateInstallerButton();
         }
