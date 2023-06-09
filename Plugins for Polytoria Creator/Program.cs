@@ -33,7 +33,7 @@ namespace Plugins_for_Polytoria_Creator {
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            if(!Directory.Exists(CreatorBasePath)) {
+            if (!Directory.Exists(CreatorBasePath)) {
                 ErrorUtils.CrashFatal($"Could not find Polytoria Creator installation.\n" +
                     $"Make sure to install Polytoria Creator first!\n\n\n" +
                     $"Searched for:\n{CreatorBasePath}");
@@ -42,26 +42,26 @@ namespace Plugins_for_Polytoria_Creator {
             (string version, long versionNumeric) = FindLatestVersion();
             InstalledCreatorPath = Path.Join(CreatorBasePath, version);
 
-            if(versionNumeric < TargetVersion) {
+            if (versionNumeric < TargetVersion) {
                 ErrorUtils.CrashFatal($"Your latest installed version of the Polytoria Creator is not supported.\n" +
                     $"Please update your installation.");
-            }else if(versionNumeric > TargetVersion) {
+            } else if (versionNumeric > TargetVersion) {
                 ErrorUtils.ShowWarn($"This version of PfPC is not targetting Polytoria Creator v{version}!\n" +
                     $"You may encounter some problems. Make sure to update PfPC if an update is available.");
             }
 
-            if(!File.Exists(ProxyPath)) {
+            if (!File.Exists(ProxyPath)) {
                 ErrorUtils.CrashFatal($"Was not able to find proxy executable.\n" +
                     $"Please reinstall PfPC!");
             }
 
-            if(!Directory.Exists(LocalModsPath)) {
+            if (!Directory.Exists(LocalModsPath)) {
                 Directory.CreateDirectory(LocalModsPath);
             }
 
             CreatorVersion = version;
             CreatorVersionNumeric = versionNumeric;
-            
+
 
             Application.Run(new StartForm());
         }
@@ -71,7 +71,7 @@ namespace Plugins_for_Polytoria_Creator {
             string highestVersion = "1.0.0";
             long highestVersionNumeric = 10000;
 
-            if(subdirs.Length == 0) {
+            if (subdirs.Length == 0) {
                 ErrorUtils.CrashFatal($"Could not find any installations in Polytoria Creator directory.\n" +
                     $"Make sure to install a Polytoria Creator version first!");
             }
@@ -86,7 +86,7 @@ namespace Plugins_for_Polytoria_Creator {
                         highestVersionNumeric = versionNumeric;
                     }
                 }
-            } catch(ArgumentException argException) {
+            } catch (ArgumentException argException) {
                 ErrorUtils.CrashFatal($"Invalid version in creator folder found.\n" +
                     $"Please clean up the folder or reinstall the creator and try again.\n\n" +
                     $"Error: {argException.Message}");

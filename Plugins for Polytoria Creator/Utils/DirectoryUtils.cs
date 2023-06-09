@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Plugins_for_Polytoria_Creator.Utils {
+﻿namespace Plugins_for_Polytoria_Creator.Utils {
     internal class DirectoryUtils {
         public static void CopyRecursive(string path, string targetPath) {
-            foreach(var file in Directory.GetFiles(path)) {
+            foreach (var file in Directory.GetFiles(path)) {
                 var fileTargetPath = Path.Join(targetPath, Path.GetFileName(file));
 
                 if (File.Exists(fileTargetPath))
@@ -16,7 +10,7 @@ namespace Plugins_for_Polytoria_Creator.Utils {
                 File.Copy(file, fileTargetPath);
             }
 
-            foreach(var dir in Directory.GetDirectories(path)) {
+            foreach (var dir in Directory.GetDirectories(path)) {
                 var newTargetPath = Path.Join(targetPath, Path.GetFileName(dir));
 
                 if (!Directory.Exists(newTargetPath))

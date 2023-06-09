@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace Plugins_for_Polytoria_Creator.Utils {
     internal class VersionUtils {
@@ -17,7 +12,7 @@ namespace Plugins_for_Polytoria_Creator.Utils {
         public static long GetNumericVersion(string versionString) {
             versionString = versionRegex.Replace(versionString, "0");
 
-            if(!long.TryParse(versionString, out var version)) {
+            if (!long.TryParse(versionString, out var version)) {
                 throw new ArgumentException($"Version string '{versionString}' either contained invalid characters or is too long.");
             }
 

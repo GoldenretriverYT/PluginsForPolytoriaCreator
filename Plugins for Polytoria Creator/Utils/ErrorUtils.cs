@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Plugins_for_Polytoria_Creator.Utils {
+﻿namespace Plugins_for_Polytoria_Creator.Utils {
     internal class ErrorUtils {
         public static void CrashFatal(string msg) {
             MessageBox.Show(msg, "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
