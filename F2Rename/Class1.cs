@@ -48,7 +48,7 @@ namespace F2Rename {
                         LoggerInstance.Error("oof!");
                     }
 
-                    te.cursorIndex = 0;
+                    te.cursorIndex = 0; // i cant get this shit to work rn who gives a fuck
                     te.selectIndex = te.text.Length;
                     justOpened = false;
                 }
