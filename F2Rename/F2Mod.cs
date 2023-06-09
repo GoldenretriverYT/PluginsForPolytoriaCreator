@@ -1,10 +1,9 @@
 ﻿using F2Rename;
-using MelonLoader;
-
 using Il2Cpp;
-using UnityEngine;
-using Il2CppRLD;
 using Il2CppInterop.Runtime;
+using Il2CppRLD;
+using MelonLoader;
+using UnityEngine;
 
 [assembly: MelonGame()]
 [assembly: MelonInfo(typeof(F2Mod), "F2 Rename", "1.0.0", "GoldenretriverYT")]
@@ -20,7 +19,7 @@ namespace F2Rename {
         public override void OnUpdate() {
             base.OnUpdate();
 
-            if(Input.GetKeyDown(KeyCode.F2)) {
+            if (Input.GetKeyDown(KeyCode.F2)) {
                 var instances = MonoSingleton<RTObjectSelection>.Get.SelectedObjects;
                 if (instances.Count != 1) return;
 
@@ -44,7 +43,7 @@ namespace F2Rename {
                 if (justOpened) {
                     var te = GUIUtility.GetStateObject(Il2CppType.Of<TextEditor>(), GUIUtility.keyboardControl)
                         .TryCast<TextEditor>(); // We cant directly cast in Il2Cpp MelonLoader mods
-                    if(te == null) {
+                    if (te == null) {
                         LoggerInstance.Error("oof!");
                     }
 

@@ -1,17 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Plugins_for_Polytoria_Creator.Objects;
 using Plugins_for_Polytoria_Creator.Utils;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO.Compression;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Plugins_for_Polytoria_Creator {
     public partial class StartForm : Form {
@@ -32,10 +24,10 @@ namespace Plugins_for_Polytoria_Creator {
 
             string[] modDirectories = Directory.GetDirectories(Program.LocalModsPath);
 
-            foreach(var modDirectory in modDirectories) {
+            foreach (var modDirectory in modDirectories) {
                 var metaPath = Path.Join(modDirectory, "meta.json");
 
-                if(!File.Exists(metaPath)) {
+                if (!File.Exists(metaPath)) {
                     continue; // Probably a corrupted mod
                 }
 
@@ -45,7 +37,7 @@ namespace Plugins_for_Polytoria_Creator {
                             MissingMemberHandling = MissingMemberHandling.Ignore,
                         });
 
-                if(meta == null) {
+                if (meta == null) {
                     continue;
                 }
 
@@ -58,7 +50,7 @@ namespace Plugins_for_Polytoria_Creator {
         private void UpdateSelectedUI() {
             ModMeta? selectedMod = ListBoxMods.SelectedItem as ModMeta;
 
-            if(selectedMod == null) {
+            if (selectedMod == null) {
                 return;
             }
 
@@ -74,7 +66,7 @@ namespace Plugins_for_Polytoria_Creator {
         }
 
         private async void ButtonInstallLoader_Click(object sender, EventArgs e) {
-            if(Program.LoaderInstalled) {
+            if (Program.LoaderInstalled) {
                 ErrorUtils.ShowError("PfPC is already installed for that version!");
                 return;
             }
@@ -131,7 +123,7 @@ namespace Plugins_for_Polytoria_Creator {
                 ProgessBarState.Value = 100;
 
                 return true;
-            } catch(Exception ex) {
+            } catch (Exception ex) {
                 ErrorUtils.ShowError($"Failed to extract melonloader!\n" +
                     $"Error: {ex.Message}");
                 return false;
@@ -191,7 +183,7 @@ namespace Plugins_for_Polytoria_Creator {
                 ProgessBarState.Value = 0;
                 ProgessBarState.Maximum = mods.Count;
 
-                foreach(var mod in mods) {
+                foreach (var mod in mods) {
                     try {
                         InstallModToCreator(Path.Join(Program.LocalModsPath, mod.ModFolderName));
                     } catch (Exception ex) {
@@ -238,14 +230,14 @@ namespace Plugins_for_Polytoria_Creator {
 
         private void OpenFileDialogZipFile_FileOk(object sender, CancelEventArgs e) {
             // TODO: Add Status Strip Updates
-            if(!File.Exists(OpenFileDialogZipFile.FileName)) {
+            if (!File.Exists(OpenFileDialogZipFile.FileName)) {
                 ErrorUtils.ShowError("The specified file was not found.");
             }
 
             try {
                 var extractPath = Path.Join(Program.AppPath, "tmpextract");
 
-                if(Directory.Exists(extractPath)) {
+                if (Directory.Exists(extractPath)) {
                     Directory.Delete(extractPath, true);
                 }
 
@@ -324,7 +316,7 @@ namespace Plugins_for_Polytoria_Creator {
 
             var creatorModBasePath = GetCreatorPathForModType(meta.ModType);
 
-            foreach(var modFile in Directory.GetFiles(Path.Join(localModPath, "files"))) {
+            foreach (var modFile in Directory.GetFiles(Path.Join(localModPath, "files"))) {
                 var creatorModFilePath = Path.Join(creatorModBasePath, Path.GetFileName(modFile));
 
                 if (File.Exists(creatorModFilePath)) {
@@ -337,6 +329,6 @@ namespace Plugins_for_Polytoria_Creator {
             }
 
             LoadInstalledMods();
-        } 
+        }
     }
 }
