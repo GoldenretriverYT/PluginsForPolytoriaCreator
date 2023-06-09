@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plugins for Polytoria Creator", "Plugins for Polytoria Creator\Plugins for Polytoria Creator.csproj", "{B6F62D11-B517-4419-89F0-1C5762A0720B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolytoriaCreatorProxy", "PolytoriaCreatorProxy\PolytoriaCreatorProxy.csproj", "{E57BDB5F-586A-4854-9EBE-BAE7FBFBF1EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolytoriaCreatorProxy", "PolytoriaCreatorProxy\PolytoriaCreatorProxy.csproj", "{E57BDB5F-586A-4854-9EBE-BAE7FBFBF1EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F2Rename", "F2Rename\F2Rename.csproj", "{F9593D1E-133D-486A-95DF-9AA402DF6255}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E57BDB5F-586A-4854-9EBE-BAE7FBFBF1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E57BDB5F-586A-4854-9EBE-BAE7FBFBF1EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E57BDB5F-586A-4854-9EBE-BAE7FBFBF1EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9593D1E-133D-486A-95DF-9AA402DF6255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9593D1E-133D-486A-95DF-9AA402DF6255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9593D1E-133D-486A-95DF-9AA402DF6255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9593D1E-133D-486A-95DF-9AA402DF6255}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
