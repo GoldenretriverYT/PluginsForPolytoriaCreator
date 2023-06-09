@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace Plugins_for_Polytoria_Creator {
     internal static class Program {
-        public static string CreatorBasePath { get; private set; } =
+        public readonly static string CreatorBasePath =
             Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Polytoria", "Creator");
 
         /// <summary>
