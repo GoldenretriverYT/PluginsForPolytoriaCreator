@@ -14,6 +14,7 @@ with Polytoria requires additional work than the normal installation I have deci
 2. Create a new folder and call it "files" - put your mod files in there.
 3. Create a new file NEXT to the "files" folder and call it "meta.json"
 4. Fill it with the appropriate information following the ModMeta schema.
+5. Zip the files - make sure you dont have your files within a subfolder in the zip archive - they have to be at the root of the zip file.
 
 ### ModMeta Schema
 ```json
@@ -33,6 +34,7 @@ please tell me and I will try to make a better numeric version "calculator"
 ## Future Plans
 Future plans are: 
   - Install from GIT
+  - Install multiple from single zip, basically multiple plugins/mods/userlibs bundled within one zip file
   - Public mods registry
   - Update mods directly
   - Maybe even provide some basic libraries to make modding easier
