@@ -38,3 +38,4 @@ Future plans are:
   - Public mods registry
   - Update mods directly
   - Maybe even provide some basic libraries to make modding easier
+  - Maybe linux support (probably only cli commands though)
