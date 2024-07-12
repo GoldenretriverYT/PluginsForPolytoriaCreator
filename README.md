@@ -1,8 +1,5 @@
 # PluginsForPolytoriaCreator
 
-> [!IMPORTANT]  
-> PfPC is deprecated and wont receive any updates as the new Polytoria Creator is in a completely different engine (like as if the engine was the problem and not the lack of skill from the polytoria devs lmaooo)
-
 Making Polytoria Creator usable by providing support for mods/plugins! This tool utilizes [MelonLoader](https://github.com/LavaGang/MelonLoader/) - a Unity Mono & IL2Cpp mod loader. Since the process of installing it
 with Polytoria requires additional work than the normal installation I have decided to make this tool.
 
